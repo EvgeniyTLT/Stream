@@ -17,28 +17,25 @@ public class Main {
             numbers.add((int) (Math.random() * 1000));
         }
 
-        for (int i:filter(numbers, 7)
-             ) {
+        List<Integer> filtered = filter(numbers, new Predicate() {
+            @Override
+            public boolean test(int a) {
+                return a % 2 == 0;
+            }
+        });
+
+        for (int i : filtered
+        ) {
             System.out.println(i);
         }
 
 
-
-
-
     }
 
-    public static List<Integer> filter(List<Integer> list, int a) {
+    public static List<Integer> filter(List<Integer> list, Predicate predicate) {
         List<Integer> result = new ArrayList<>();
         for (int i : list) {
-            if (new Predicate() {
-                @Override
-                public boolean test(int a) {
-                    if (i % a == 0) {
-                        return true;
-                    } else return false;
-                }
-            }.test(5) == true) {
+            if (predicate.test(i)) {
                 result.add(i);
             }
         }
