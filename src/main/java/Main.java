@@ -17,12 +17,8 @@ public class Main {
             numbers.add((int) (Math.random() * 1000));
         }
 
-        List<Integer> filtered = filter(numbers, new Predicate() {
-            @Override
-            public boolean test(int a) {
-                return a % 2 == 0;
-            }
-        });
+        List<Integer> filtered = filter(numbers, (n) -> n% 2 == 0);
+
 
         for (int i : filtered
         ) {
