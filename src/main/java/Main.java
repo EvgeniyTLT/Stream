@@ -18,10 +18,10 @@ public class Main {
         }
 
         List<Integer> filtered = filter(numbers, (n) -> n % 2 == 0);
-
-        for (int i : filtered
+        List<String> mapped = map(filtered);
+        for (String map : mapped
         ) {
-            System.out.println(i);
+            System.out.println(map);
         }
 
 
@@ -31,7 +31,7 @@ public class Main {
         List<String> result = new ArrayList<>();
         for (int number : numbers
         ) {
-            result.add("Number " + number);
+            result.add("Number: " + number);
         }
         return result;
     }
