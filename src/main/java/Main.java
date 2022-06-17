@@ -17,8 +17,7 @@ public class Main {
             numbers.add((int) (Math.random() * 1000));
         }
 
-        List<Integer> filtered = filter(numbers, (n) -> n% 2 == 0);
-
+        List<Integer> filtered = filter(numbers, (n) -> n % 2 == 0);
 
         for (int i : filtered
         ) {
@@ -26,6 +25,15 @@ public class Main {
         }
 
 
+    }
+
+    public static List<String> map(List<Integer> numbers) {
+        List<String> result = new ArrayList<>();
+        for (int number : numbers
+        ) {
+            result.add("Number " + number);
+        }
+        return result;
     }
 
     public static List<Integer> filter(List<Integer> list, Predicate predicate) {
