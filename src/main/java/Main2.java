@@ -36,7 +36,7 @@ public class Main2 {
 
         for (User user: sorted
              ) {
-            System.out.println(user.getName());
+            System.out.println(user);
         }
     }
 }
