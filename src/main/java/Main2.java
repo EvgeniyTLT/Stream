@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class Main2 {
@@ -29,14 +30,11 @@ public class Main2 {
 //        boolean count = users.stream()
 //                .noneMatch(user -> user.getAge() <= 18); // есть все false, вернет true
 
-        List<User> sorted = users.stream()
+        users.stream()
                 .sorted((o1, o2) -> Integer.compare(o2.getAge(), o1.getAge()))
                 .limit(3)
-                .collect(Collectors.toList());
+                .forEach((user) -> System.out.println(user));
 
-        for (User user: sorted
-             ) {
-            System.out.println(user);
-        }
+
     }
 }
