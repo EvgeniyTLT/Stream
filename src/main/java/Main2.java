@@ -42,7 +42,10 @@ public class Main2 {
 //
 //        oldest.ifPresentOrElse(System.out::println, () -> System.out.println("User not found"));
 
-
+        users.stream()
+                .filter(user1 -> user1.getName().contains("l"))
+                .findFirst()
+                .ifPresentOrElse(System.out::println, ()-> System.out.println("User not found"));
 
     }
 }
