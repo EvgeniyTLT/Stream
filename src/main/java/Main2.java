@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main2 {
     public static void main(String[] args) {
@@ -42,10 +43,15 @@ public class Main2 {
 //
 //        oldest.ifPresentOrElse(System.out::println, () -> System.out.println("User not found"));
 
+//        int[] array = {3, 1, 3, 5, 14}; // варианты создания стримов
+//        Arrays.stream(array). ....
+//        Stream.of(5, 3,5,4524); .....
+
+
         users.stream()
                 .filter(user1 -> user1.getName().contains("l"))
                 .findFirst()
-                .ifPresentOrElse(System.out::println, ()-> System.out.println("User not found"));
+                .ifPresentOrElse(System.out::println, () -> System.out.println("User not found"));
 
     }
 }
