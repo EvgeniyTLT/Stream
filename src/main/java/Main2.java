@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -31,15 +28,19 @@ public class Main2 {
 //        boolean count = users.stream()
 //                .noneMatch(user -> user.getAge() <= 18); // есть все false, вернет true
 
-        users.stream()
-//                .sorted((o1, o2) -> Integer.compare(o2.getAge(), o1.getAge()))
-//                .limit(3)
-//                .forEach((user) -> System.out.println(user));
-                .sorted((o1, o2) -> o1.getName().compareTo(o2.getName()))
-                .filter(user -> user.getAge()<40)
-                .limit(3)
-                .map(user -> user.getName())
-                .forEach(System.out::println);
+//        Optional<User> oldest = users.stream()
+////                .sorted((o1, o2) -> Integer.compare(o2.getAge(), o1.getAge()))
+////                .limit(3)
+////                .forEach((user) -> System.out.println(user));
+////                .sorted((o1, o2) -> o1.getName().compareTo(o2.getName()))
+////                .filter(user -> user.getAge() < 40)
+////                .limit(3)
+////                .map(user -> user.getName())
+////                .forEach(System.out::println);
+//                .filter(user -> user.getAge() < 5)
+//                .max(Comparator.comparingInt(User::getAge));
+//
+//        oldest.ifPresentOrElse(System.out::println, () -> System.out.println("User not found"));
 
 
 
